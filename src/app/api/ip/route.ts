@@ -5,7 +5,6 @@ export async function GET(request: NextRequest) {
   const realIp = request.headers.get('x-real-ip');
   
   return NextResponse.json({
-    ipv4: forwarded ? forwarded.split(',')[0] : realIp || 'Not available',
-    ipv6: realIp || 'Not available',
+    ipv4: forwarded ? forwarded.split(',')[0] : realIp || 'Not available'
   });
 }
